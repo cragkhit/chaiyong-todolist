@@ -1,14 +1,18 @@
 [
-	{
-		"username": "alice",
-		"password": "wonderland"
-	},
-	{
-		"username": "bob",
-		"password": "builder"
-	},
-	{
-		"username": "charlie",
-		"password": "chocolate"
-	}
+    {
+        "username": "alice",
+        "password": "wonderland"
+    },
+    {
+        "username": "bob",
+        "password": "builder"
+    },
+    {
+        "username": "charlie",
+        "password": "chocolate"
+    },
+    {
+        "username": "newuser",
+        "password": "password123"
+    }
 ]

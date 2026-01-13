@@ -41,3 +41,6 @@ Stored in `todos.json`. Note that `id` must be unique (UUID).
 
 - [x] **3. Login**
     - Implement a login functionality
+
+- [x] **4. Sign Up**
+    - Implement a sign up functionality
