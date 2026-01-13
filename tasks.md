@@ -38,3 +38,6 @@ Stored in `todos.json`. Note that `id` must be unique (UUID).
 - [x] **2. CLI Interface - Basic Interaction**
     - Implement a main application loop.
     - Create a "Pre-Login" menu: Options for [1] Login, [2] Sign Up, [3] Exit.
+
+- [x] **3. Login**
+    - Implement a login functionality
