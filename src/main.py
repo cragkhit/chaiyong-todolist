@@ -4,12 +4,16 @@ from __future__ import annotations
 
 from typing import Callable, Dict
 
+from auth import AuthManager
+
 
 class App:
     """A simple REPL-like CLI shell."""
 
-    def __init__(self) -> None:
+    def __init__(self, auth_manager: AuthManager | None = None) -> None:
         self._running = True
+        self._current_user: str | None = None
+        self._auth = auth_manager or AuthManager()
         self._actions: Dict[str, Callable[[], None]] = {
             "1": self._handle_login,
             "2": self._handle_sign_up,
@@ -44,9 +48,17 @@ class App:
         action()
 
     def _handle_login(self) -> None:
-        """Placeholder for login flow until authentication is implemented."""
+        """Authenticate a user against the stored credentials."""
 
-        print("Login is not implemented yet. Please check back soon.")
+        username = input("Username: ").strip()
+        password = input("Password: ").strip()
+
+        if self._auth.authenticate(username, password):
+            self._current_user = username
+            print(f"Welcome back, {username}!")
+            return
+
+        print("Invalid username or password. Please try again.")
 
     def _handle_sign_up(self) -> None:
         """Placeholder for sign-up flow until user registration is implemented."""
