@@ -61,9 +61,25 @@ class App:
         print("Invalid username or password. Please try again.")
 
     def _handle_sign_up(self) -> None:
-        """Placeholder for sign-up flow until user registration is implemented."""
+        """Create a new user account."""
 
-        print("Sign up is not implemented yet. Please check back soon.")
+        username = input("Username: ").strip()
+        password = input("Password: ").strip()
+        confirm_password = input("Confirm Password: ").strip()
+
+        if not username or not password:
+            print("Username and password cannot be empty.")
+            return
+
+        if password != confirm_password:
+            print("Passwords do not match. Please try again.")
+            return
+
+        if self._auth.register(username, password):
+            print(f"Account created successfully! You can now log in with your username.")
+            return
+
+        print("Username already exists. Please choose a different username.")
 
     def _exit_application(self) -> None:
         """Stop the application loop and exit."""
