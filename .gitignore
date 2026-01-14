@@ -1,0 +1,16 @@
+.venv/lib64
+.venv/pyvenv.cfg
+.venv/bin/python
+.venv/bin/python3
+.venv/bin/python3.12
+src/__pycache__/auth.cpython-312.pyc
+src/__pycache__/main.cpython-312.pyc
+src/__pycache__/models.cpython-312.pyc
+tests/__pycache__/test_auth.cpython-312-pytest-9.0.2.pyc
+tests/__pycache__/test_main.cpython-312-pytest-9.0.2.pyc
+tests/__pycache__/test_models.cpython-312-pytest-9.0.2.pyc
+venv/lib64
+venv/pyvenv.cfg
+venv/bin/python
+venv/bin/python3
+venv/bin/python3.12
