@@ -1,4 +1,4 @@
-name: Build
+name: Unit Tests
 on:
   push:
     branches:
@@ -6,13 +6,11 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
-  sonarqube:
-    name: SonarQube
+  test:
+    name: Run Unit Tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
@@ -22,4 +20,4 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       - name: Run unit tests
-        run: PYTHONPATH=src pytest --cov=. --cov-report=xml:coverage.xml tests/
+        run: PYTHONPATH=src pytest tests/
