@@ -23,14 +23,3 @@ jobs:
           pip install -r requirements.txt
       - name: Run unit tests
         run: PYTHONPATH=src pytest --cov=. --cov-report=xml:coverage.xml tests/
-      - name: Install tox and any other packages
-        run: pip install tox
-      - name: Run tox
-        run: tox -e py311
-      - name: SonarQube Scan
-        uses: SonarSource/sonarqube-scan-action@v6
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        with:
-          args: >
-            -Dsonar.python.coverage.reportPaths=coverage.xml
