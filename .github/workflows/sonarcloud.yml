@@ -22,7 +22,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       - name: Run unit tests
-        run: pytest tests/
+        run: PYTHONPATH=src pytest tests/
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v6
         env:
